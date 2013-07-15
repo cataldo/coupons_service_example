@@ -1,0 +1,6 @@
+h1 Для вас создана заявка №#{@order.id}
+
+p на сумму: #{@order.sum}
+
+
+p= link_to "Оплатить", paid_order_path(@order)

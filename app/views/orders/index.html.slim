@@ -1,0 +1,18 @@
+h1 Listing orders
+
+table
+  tr
+    th id
+    th deal
+    th sum
+    th paid
+    th
+
+  - @orders.each do |order|
+    tr
+      td = order.id
+      td = order.deal.name
+      td = order.sum
+      td = order.human_state_name
+      td = order.paid_date
+      td = link_to "Оплатить", paid_order_path(order) if order.deal.can_buy_coupons?(current_user) and order.not_paid?

@@ -1,0 +1,11 @@
+= simple_form_for(@coupon) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :deal_id
+    = f.input :user_id
+    = f.input :state
+    = f.input :use_date
+
+  .form-actions
+    = f.button :submit

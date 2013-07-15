@@ -1,0 +1,42 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @deal.name
+p
+  strong Descr:
+  = @deal.descr
+p
+  strong Max coupons:
+  = @deal.max_coupons
+p
+  strong Min coupons:
+  = @deal.min_coupons
+p
+  strong Publication time:
+  = @deal.publication_time
+p
+  strong Deadline:
+  = @deal.deadline
+p
+  strong Type:
+  = @deal.type
+p
+  strong Coupons count:
+  = @deal.coupons_count
+p
+  strong Price:
+  = @deal.price
+p
+  strong Discount:
+  = @deal.discount
+p
+  strong Full cost:
+  = @deal.full_cost
+p
+  strong State:
+  = @deal.state
+
+= link_to 'Edit', edit_deal_path(@deal)
+'|
+= link_to 'Back', deals_path

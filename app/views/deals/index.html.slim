@@ -1,0 +1,36 @@
+h1 Акции
+
+table
+  tr
+    th Descr
+    th Class
+    th State
+    th Deadline
+    th Profit
+    th
+    th
+    th
+    th
+
+  - @deals.each do |deal|
+    tr
+      td
+        b=deal.name
+      td = deal.class
+      td = deal.human_state_name
+      td = deal.deadline.strftime("%F")
+      td = deal.profit
+      td = link_to 'Купить купон', new_deal_orders_path(deal.becomes(Deal))  if deal.can_buy_coupons?(current_user)
+      td = link_to 'Опубликовать', [:publish, deal.becomes(Deal)]
+      td = link_to 'Не состоялась', [:finish_fail, deal.becomes(Deal)]
+      td = link_to 'Состоялась', [:finish_success, deal.becomes(Deal)]
+      td = link_to 'Edit', [:edit, deal]
+      td = link_to 'X', deal, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'Добавить акцию типа сертификат', new_certificate_deal_path
+br
+= link_to 'Добавить акцию типа фикстированной выгоды', new_fixed_deal_path
+br
+= link_to 'Добавить акцию типа неограниченной выгоды', new_unlimited_deal_path

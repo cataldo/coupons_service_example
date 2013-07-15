@@ -1,0 +1,17 @@
+= simple_form_for(@deal) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :max_coupons
+    = f.input :min_coupons
+    = f.input :publication_time
+    = f.input :deadline
+    = f.input :price
+    = f.input :discount
+    = f.input :full_cost
+    = f.input :type_codes_generation, collection: [["Генерировать", "generate"],["Загрузить","load"]], include_blank: false
+    = f.input :list_codes, as: :text
+
+  .form-actions
+    = f.button :submit

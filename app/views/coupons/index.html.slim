@@ -1,0 +1,19 @@
+h1 Listing coupons
+
+table
+  tr
+    th Deal
+    th State
+    th Code
+    th Use date
+    th
+    th
+    th
+
+  - @coupons.each do |coupon|
+    tr
+      td = coupon.deal.name
+      td = coupon.state
+      td = coupon.show_code
+      td = coupon.use_date
+
